@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Research-AI-ev3dev</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../css/blog.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="blog-masthead">
+      <div class="container">
+        <nav class="blog-nav">
+          <a class="blog-nav-item" href="#">Principal</a>
+          <a class="blog-nav-item" href="#">Atualizações</a>
+          <a class="blog-nav-item active" href="index.html">Tutoriais</a>
+          <a class="blog-nav-item" href="#">Sobre</a>
+        </nav>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="blog-header">
+        <h1 class="blog-title">Processo de instalação das bibliotecas C e primeiro teste</h1>
+
+      </div>
+
+      <div class="row">
+
+        <div class="col-sm-8 blog-main">
+
+          <div class="blog-post">
+            <h2 class="blog-post-title">Baixando todas as bibliotecas e copiando para o EV3</h2>
+            <h3>1- Clonar o repositório</h3>
+            <p>Na pasta EV3DEV criada, ou em alguma outra de sua preferência, clonar o repositório ev3dev-c do GitHub</p>
+            <pre><code>~$  git clone https://github.com/in4lio/ev3dev-c</code></pre>
+
+            <h3>2- Criar uma nova pasta no terminal do EV3</h3>
+            <p>Esta pasta será onde as bibliotecas, exemplos e etc serão guardadas</p>
+            <pre><code>~$  mkdir c-libraries</code></pre>
+            <pre><code>~$  cd c-libraries</code></pre>
+
+            <h3>3- Copiar o repositório "ev3dev-c" para o EV3</h3>
+            <pre><code>~$  scp -r /caminho/completo/para/o/arquivo robot@ev3dev.local:caminho/onde/colocar/os/arquivos/ev3</code></pre>
+            <p>No nosso exemplo seria:</p>
+            <pre><code>~$  scp -r /home/username/Documentos/EV3DEV/ev3dev-c robot@ev3dev.local:/home/robot/c-libraries</pre></code>
+            <p>Repare que estamos copiando todas as bibliotecas disponíveis, porém utilizaremos somente a biblioteca C.</p>
+
+            <h3>4- Vamos compilar as bibliotecas:</h3>
+            <pre><code>~$  cd ev3dev-c/source/ev3</code></pre>
+            <pre><code>~$  make</code></pre>
+            <pre><code>~$  sudo make install</code></pre>
+
+            <h3>5- Teste da biblioteca compilada:</h3>
+            <pre><code>~$  cd ../../eg/light</code></pre>
+            <pre><code>~$  make</code></pre>
+            <pre><code>~$  Debug/light</code></pre>
+            </div><!-- /.blog-post -->
+
+
+          <nav>
+            <ul class="pager">
+              <li><a href="config.html">Anterior</a></li>
+            </ul>
+          </nav>
+
+        </div><!-- /.blog-main -->
+
+
+      </div><!-- /.row -->
+
+    </div><!-- /.container -->
+
+    <footer class="blog-footer">
+      <p>Blog template built for <a href="http://getbootstrap.com">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+      <p>Modificado para testes</p>
+      <p>
+        <a href="#">Back to top</a>
+      </p>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

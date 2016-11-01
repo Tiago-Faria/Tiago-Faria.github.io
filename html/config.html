@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Research-AI-ev3dev</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../css/blog.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="blog-masthead">
+      <div class="container">
+        <nav class="blog-nav">
+          <a class="blog-nav-item" href="#">Principal</a>
+          <a class="blog-nav-item" href="#">Atualizações</a>
+          <a class="blog-nav-item active" href="index.html">Tutoriais</a>
+          <a class="blog-nav-item" href="#">Sobre</a>
+        </nav>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="blog-header">
+        <h1 class="blog-title">Configurando conexão SSH e instalando os pacotes básicos</h1>
+
+      </div>
+
+      <div class="row">
+
+        <div class="col-sm-8 blog-main">
+
+          <div class="blog-post">
+            <h2 class="blog-post-title">Conectando ao EV3</h2>
+            <h3>1- Configurar Conexão</h3>
+            <ul>
+              <li>No computador Host, com o EV3 conectado via USB, clique no simbolo de rede do Ubuntu e depois em "editar conexões".</li>
+              <li>Após a janela de Conexões de rede abrir, clique em "adicionar" para criar uma nova conexão.</li>
+              <li>Selecione a opção "Ethernet" na caixa de seleção e clique em "criar".</li>
+              <li>Escolha um nome para a sua conexão e, no campo "Endereço MAC clonado" escolha o endereço MAC que inicie com 12:16:53.</li>
+              <li>Vá para a aba "Configurações IPv4" e selecione o método "Compartilhado com outros computadores".</li>
+              <li>Clique em salvar, as configurações do computador host estão prontas.</li>
+              <li>No EV3, selecione "Wireless and Network", e então clique na conexão "Wired".</li>
+              <li>Selecione a opção "Connect" e espere o State mudar de "Connecting" para "Online".</li>
+              <li>Marque a opção "Connect automatically" para conectar automaticamente no futuro.</li>
+            </ul>
+
+            <h3>2- Conectar ao EV3 com SSH</h3>
+            <p>A conexão SSh nos permitirá rodar comandos no EV3 pela rede:</p>
+            <p>Digite o seguinte comando no terminal:</p>
+            <pre><code>~$  ssh robot@ev3dev.local</code></pre>
+            <p>Se for a primeira vez que está realizando a conexão, será solicitado a confirmação de autenticação, basta digitae "yes" no terminal e depois apertar "Enter"</p>
+            <p>A senha será pedida no terminal. Por padrão ela é: maker.</p>
+            <p>A partir de agora o terminal onde foram realizados os comandos acima é o terminal do ev3dev.</p>
+            <h2 class="blog-post-title">Instalando pacotes iniciais</h2>
+            <h3>1- Instalação do build essential</h3>
+            <p>Digite no terminal do ev3dev os seguintes comandos:</p>
+            <pre><code>~$  sudo apt-get update</code></pre>
+            <pre><code>~$  sudo apt-get install build-essential</code></pre>
+            <p>Ao final da instalação teremos o necessário para fazer os testes futuros.</p>
+            </div><!-- /.blog-post -->
+
+
+          <nav>
+            <ul class="pager">
+              <li><a href="linux.html">Anterior</a></li>
+              <li><a href="library.html">Próximo</a></li>
+            </ul>
+          </nav>
+
+        </div><!-- /.blog-main -->
+
+
+      </div><!-- /.row -->
+
+    </div><!-- /.container -->
+
+    <footer class="blog-footer">
+      <p>Blog template built for <a href="http://getbootstrap.com">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+      <p>Modificado para testes</p>
+      <p>
+        <a href="#">Back to top</a>
+      </p>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
