@@ -11,17 +11,17 @@
     <title>Research-AI-ev3dev</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="../css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/blog.css" rel="stylesheet">
+    <link href="../css/blog.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="js/ie-emulation-modes-warning.js"></script>
+    <script src="../js/ie-emulation-modes-warning.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -37,7 +37,7 @@
         <nav class="blog-nav">
           <a class="blog-nav-item" href="#">Principal</a>
           <a class="blog-nav-item" href="#">Atualizações</a>
-          <a class="blog-nav-item active" href="#">Tutoriais</a>
+          <a class="blog-nav-item active" href="index.html">Tutoriais</a>
           <a class="blog-nav-item" href="#">Sobre</a>
         </nav>
       </div>
@@ -46,8 +46,7 @@
     <div class="container">
 
       <div class="blog-header">
-        <h1 class="blog-title">Tutoriais</h1>
-        <p class="lead blog-description">Abaixo você encontra os tutoriais de como instalar o ev3dev no seu Brick, realizar as configurações, instalar bibliotecas e testar.</p>
+        <h1 class="blog-title">Compilação cruzada pelo Docker</h1>
 
       </div>
 
@@ -56,23 +55,51 @@
         <div class="col-sm-8 blog-main">
 
           <div class="blog-post">
-            <h2 class="blog-post-title">Comece por aqui</h2>
-              <ul>
-                <li><a href = "html/linux.html">Instalar ev3dev no Linux.</a></li>
-                <li><a href = "html/windows.html">Instalar ev3dev no Windows.</a></li>
-                <li><a href = "html/config.html">Configurando a conexão SSH.</a></li>
-                <li><a href = "html/library.html">Instalando as bibliotecas e primeiros testes.</a></li>
-		 <li><a href = "html/docker.html">Compilação cruzada pelo docker.</a></li>
-              </ul>
+            <h2 class="blog-post-title">instalando Docker</h2>
+		<p>1 - Para atualizar o sistema, utilize os seguintes comandos no terminal</p>
+		<pre><code>$ sudo apt-get update </code></pre>
+		<pre><code>$ sudo apt-get install apt-transport-https ca-certificates</code></pre>
+		<p>2 - Adicionar uma chave GPG nova</p>
+		<pre><code>$ sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D</code></pre>
+		<p>3 - para cada versão do linux, o APT procura por pacotes em um determinado lugar. Procurar o seu na relação abaixo para ser usado no item 4 do tutorial </p>
+		<ul>
+    		<li>Para Ubuntu Precise 12.04 (LTS) -<br>	deb https://apt.dockerproject.org/repo ubuntu-precise main </li>
+    		<li>Para Ubuntu Trusty 14.04 (LTS) -<br>	deb https://apt.dockerproject.org/repo ubuntu-trusty main </li>
+    		<li>Para Ubuntu Xenial 16.04 (LTS) -<br>	deb https://apt.dockerproject.org/repo ubuntu-xenial main </li>
+		</ul>
+		<p>4 - executar o seguinte codigo substituindo <REPO> pelo endereço especificado no item 3</p>
+		<pre><code>$ echo "<REPO>" | sudo tee /etc/apt/sources.list.d/docker.list</pre></code>
+		<p>5 - Atualizar o sistema</p>
+		<pre><code>$ sudo apt-get update </pre></code>
+		<p>6 - instalar o docker</p>
+		<pre><code>sudo apt-get install docker-engine</code></pre>
+		<p>7 - inicializar o docker</p>
+		<pre><code>$ sudo service docker start </code></pre>
+		<p>8 - verificar se o docker foi instalado com sucesso</p>
+		<pre><code>$ sudo docker run hello-world </code></pre>
+		<p>9 - Entrar como root</p>
+		<pre><code>$ sudo su</code></pre>
+		<p>10 - Criar um grupo</p>
+		<pre><code>$ sudo groupadd docker </code></pre>
+		<p>11 - se adicionar ao grupo</p>
+		<pre><code>$ sudo usermod -aG docker $USER</code></pre>
+		
+	
+
+            
+         	<p>Pronto!! Etapa concluida. Clique em Próximo para ver os outros tutorias.</p>
           </div><!-- /.blog-post -->
+
 
           <nav>
             <ul class="pager">
-              <li><a href="html/linux.html">Próximo</a></li>
+              <li><a href="library.html">Anterior</a></li>
+              <li><a href="#">Próximo</a></li>
             </ul>
           </nav>
 
         </div><!-- /.blog-main -->
+
 
       </div><!-- /.row -->
 
@@ -85,7 +112,6 @@
         <a href="#">Back to top</a>
       </p>
     </footer>
-
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

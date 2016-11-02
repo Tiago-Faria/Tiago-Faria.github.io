@@ -62,7 +62,6 @@
                 <li><a href = "html/windows.html">Instalar ev3dev no Windows.</a></li>
                 <li><a href = "html/config.html">Configurando a conexão SSH.</a></li>
                 <li><a href = "html/library.html">Instalando as bibliotecas e primeiros testes.</a></li>
-		 <li><a href = "html/docker.html">Compilação cruzada pelo docker.</a></li>
               </ul>
           </div><!-- /.blog-post -->
 
