@@ -67,8 +67,8 @@
     		<li>Para Ubuntu Trusty 14.04 (LTS) -<br>	deb https://apt.dockerproject.org/repo ubuntu-trusty main </li>
     		<li>Para Ubuntu Xenial 16.04 (LTS) -<br>	deb https://apt.dockerproject.org/repo ubuntu-xenial main </li>
 		</ul>
-		<p>4 - executar o seguinte codigo substituindo <REPO> pelo endereço especificado no item 3</p>
-		<pre><code>$ echo "<REPO>" | sudo tee /etc/apt/sources.list.d/docker.list</pre></code>
+		<p>4 - executar o seguinte codigo substituindo "REPO" pelo endereço especificado no item 3</p>
+		<pre><code>$ echo "REPO" | sudo tee /etc/apt/sources.list.d/docker.list</pre></code>
 		<p>5 - Atualizar o sistema</p>
 		<pre><code>$ sudo apt-get update </pre></code>
 		<p>6 - instalar o docker</p>
@@ -83,6 +83,24 @@
 		<pre><code>$ sudo groupadd docker </code></pre>
 		<p>11 - se adicionar ao grupo</p>
 		<pre><code>$ sudo usermod -aG docker $USER</code></pre>
+		<p>12 - É preciso instalar qemu-user-static no computador</p>
+		<pre><code>sudo apt-get install qemu-user-static</code></pre>
+		<h2 class="blog-post-title">instalando a imagem do ev3dev</h2>
+		<p>13 - baixar a imagem do Docker com o ev3dev</p>
+		<pre><code>docker pull ev3dev/debian-jessie-cross</code></pre>
+		<p>14 - Para colocar um nome mais curto na imagem</p>
+		<pre><code>docker tag ev3dev/debian-jessie-cross ev3cc</code></pre>
+		<p>15 - Você pode ver a lista de imagens baixadas com o seguinte comando</p>
+		<pre><code>docker images</code></pre>
+		<p>16 - Você pode deletar uma imagem com: </p>
+		<pre><code>docker rmi "image-name-or-hash" </code></pre>
+		<p>17 - Para iniciar um container com uma pasta compartilhada com o seu computador use o seguinte comando: (ao ivez de C:\Users\myname\example\, deve-se usar o caminho da pasta que deve ser usada compartilhadamente com o docker)</p>
+		<pre><code>docker run --rm -it -v C:\Users\myname\example\:/src -w /src ev3cc</code></pre>
+		<p>18 - Para compilar um programa, deve se usar arm-linux-gnueabi-gcc no lugar de gcc</p>
+		<pre><code>arm-linux-gnueabi-gcc -o exemplo exemplo.c</code></pre>
+		<p>Para sair do container, digte....</p>
+		<pre><code>exit</code></pre>
+		
 		
 	
 

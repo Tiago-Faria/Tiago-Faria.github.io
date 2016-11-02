@@ -93,7 +93,20 @@
 		<p>15 - Você pode ver a lista de imagens baixadas com o seguinte comando</p>
 		<pre><code>docker images</code></pre>
 		<p>16 - Você pode deletar uma imagem com: </p>
-		<pre><code>docker rmi "image-name-or-hash" <pre><code>
+		<pre><code>docker rmi "image-name-or-hash" </code></pre>
+		<p>17 - Para iniciar um container com uma pasta compartilhada com o seu computador use o seguinte comando: (ao ivez de C:\Users\myname\example\, deve-se usar o caminho da pasta que deve ser usada compartilhadamente com o docker)</p>
+		<pre><code>docker run --rm -it -v C:\Users\myname\example\:/src -w /src ev3cc</code></pre>
+		<p>18 - Para compilar um programa, deve se usar arm-linux-gnueabi-gcc no lugar de gcc</p>
+		<pre><code>arm-linux-gnueabi-gcc -o exemplo exemplo.c</code></pre>
+		<p>19 - Para sair do container, digte....</p>
+		<pre><code>exit</code></pre>
+		<p>20 - Para salvar alterações feitas no container, use o seguinte comando:</p>
+		<pre><code>sudo docker commit [id do conteiner] [nome da imagem]</code></pre>
+		<h2 class="blog-post-title">usando  ev3dev-c (tutorial em progresso)</h2>
+		<p>21 - Para compilar para o EV3, deve-se executar o sseguinte comando: </p>
+		<pre><code>arm-linux-gnueabi-gcc -I../source/ev3 -std=gnu99 -W -Wall -Wno-comment -c exemplo.c -o exemplo.o</code></pre>
+		<p>a parte "../source/ev3" é um endereço para a pasta /source/ev3 relativo a onde esta o seu programa, então se o programa estiver dentro da pasta compartilhada</p>
+		
 		
 	
 
